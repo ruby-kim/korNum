@@ -1,16 +1,4 @@
-from knum.chgFormat import chgList
-
-
-def find_num_text(text):
-    return
-
-
-def kor2num(text):
-    return
-
-
-def num2kor(text):
-    return
+from knum.chgFormat import find_num_text, kor2num, num2kor
 
 
 if __name__ == "__main__":

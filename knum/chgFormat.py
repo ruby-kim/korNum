@@ -1,10 +1,13 @@
 from knum import chgList
 
 
-def kor2num(word):
-    decode_result = []
+def find_num_text(text):
     return
 
 
-def num2kor(word):
+def kor2num(text):
+    return
+
+
+def num2kor(text):
     return
