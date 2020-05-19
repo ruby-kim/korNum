@@ -7,6 +7,7 @@ __version__ = '0.0.0'
 __url__ = 'https://github.com/study-ai-data/knum'
 __download_url__ = 'https://github.com/study-ai-data/knum'
 __install_requires__ = [
+    "soyspacing",
 ]
 __license__ = 'MIT'
 
