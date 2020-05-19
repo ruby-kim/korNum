@@ -1,7 +1,9 @@
 """
 Korean number list
-- cardinal number: 기수. 순서를 정의(일 이 삼...)
+- cardinal number: 기수. 순서 정의(일 이 삼...)
 - ordinal number: 서수. 셈이 가능(하나 둘 셋...)
+
+* unit 파트는 자료 찾아보면서 발견 시 해당 항목으로 데이터 추가
 """
 
 
@@ -18,6 +20,7 @@ class chgList:
             "m": ["미터"],
             "원": ["원"],
             "달러": ["달러"],
+            "개": ["개"],
         }
         self.ordUnit = {
             "개입": ["개입"],
