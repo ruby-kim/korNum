@@ -63,15 +63,29 @@ def kor2num(text):
         :param: result(list)
     """
     cardIdx, ordIdx = get_guessed_num_idx(text)
-    changeList = chgList()
-    cardNum = changeList.cardNum
-    #words = text.split(" ")
+    changeLists = chgList()
+    cardNum = changeLists.cardNum
+    cardLists, ordLists = list(), list()
 
-    # for idx in cardIdx:
-    #     for i in range(idx, -1):
+    """ cardinal num """
+    # find num text section
+    firIdx = cardIdx
+    for idx in cardIdx:
+        for i in range(idx, -1, -1):
+            if text[i] == ' ':
+                break
+            else:
+                for cards in cardNum:
+                    if text[i] == cards[0]:
+                        firIdx = i
+        cardLists.append((firIdx, idx))
 
-    print(cardIdx, ordIdx)
-    #return cardIdx, ordIdx
+    # change kor to num
+    for cardList in cardLists:
+        start, end = cardList[0], cardList[1]
+        for i in range(start, end):
+            # 숫자로 바꾸는 진짜코드 작성
+    # print(text[cardLists[0][0]], text[cardLists[0][1]])
 
 
 def num2kor(text):
