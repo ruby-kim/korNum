@@ -87,23 +87,24 @@ def kor2num(text):
         realCardNum.append(card[1])
 
     baseKorCardNum = korCardNum[:9]
-    unitKorCardNum = korCardNum[10:]
+    unitKorCardNum = korCardNum[9:]
     baseRealCardNum = realCardNum[:9]
-    unitRealCardNum = realCardNum[10:]
+    unitRealCardNum = realCardNum[9:]
 
     for cardList in cardLists:
         start, end = cardList[0], cardList[1]
         chgWord = ""
         result = 0
+        tmp = 1
         for i in range(start, end):
             chgWord += text[i]
             if text[i] in baseKorCardNum:
-                result += baseRealCardNum[baseKorCardNum.index(text[i])]
+                tmp = baseRealCardNum[baseKorCardNum.index(text[i])]
+                if i == end-1:
+                    result += tmp
             else:
-                if result == 0:
-                    result += unitRealCardNum[unitKorCardNum.index(text[i])]
-                else:
-                    result *= unitRealCardNum[unitKorCardNum.index(text[i])]
+                result += tmp * unitRealCardNum[unitKorCardNum.index(text[i])]
+                tmp = 1
         text = text.replace(chgWord, str(result))
     return text
 
