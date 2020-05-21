@@ -68,7 +68,7 @@ def kor2num(text):
     cardLists, ordLists = list(), list()
 
     """ cardinal num """
-    # find num text section
+    # 1. find num text section
     firIdx = cardIdx
     for idx in cardIdx:
         for i in range(idx, -1, -1):
@@ -80,12 +80,32 @@ def kor2num(text):
                         firIdx = i
         cardLists.append((firIdx, idx))
 
-    # change kor to num
+    # 2. change kor to num
+    korCardNum, realCardNum = list(), list()
+    for card in cardNum:
+        korCardNum.append(card[0])
+        realCardNum.append(card[1])
+
+    baseKorCardNum = korCardNum[:9]
+    unitKorCardNum = korCardNum[10:]
+    baseRealCardNum = realCardNum[:9]
+    unitRealCardNum = realCardNum[10:]
+
     for cardList in cardLists:
         start, end = cardList[0], cardList[1]
+        chgWord = ""
+        result = 0
         for i in range(start, end):
-            # 숫자로 바꾸는 진짜코드 작성
-    # print(text[cardLists[0][0]], text[cardLists[0][1]])
+            chgWord += text[i]
+            if text[i] in baseKorCardNum:
+                result += baseRealCardNum[baseKorCardNum.index(text[i])]
+            else:
+                if result == 0:
+                    result += unitRealCardNum[unitKorCardNum.index(text[i])]
+                else:
+                    result *= unitRealCardNum[unitKorCardNum.index(text[i])]
+        text = text.replace(chgWord, str(result))
+    return text
 
 
 def num2kor(text):
