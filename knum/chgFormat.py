@@ -86,26 +86,30 @@ def kor2num(text):
         korCardNum.append(card[0])
         realCardNum.append(card[1])
 
-    baseKorCardNum = korCardNum[:9]
-    unitKorCardNum = korCardNum[9:]
-    baseRealCardNum = realCardNum[:9]
-    unitRealCardNum = realCardNum[9:]
+    baseKorCardNum = korCardNum[:9]         # 일, 이, 삼, 사, 오, 육, 칠, 팔, 구
+    unitKorCardNum = korCardNum[9:]         # 십, 백, 천, 만, 억, 조, 경, 해
+    baseRealCardNum = realCardNum[:9]       # 일, 이, 삼, 사, 오, 육, 칠, 팔, 구
+    unitRealCardNum = realCardNum[9:]       # 십, 백, 천, 만, 억, 조, 경, 해
 
+    wordList = list()
     for cardList in cardLists:
-        start, end = cardList[0], cardList[1]
-        chgWord = ""
-        result = 0
-        tmp = 1
-        for i in range(start, end):
-            chgWord += text[i]
-            if text[i] in baseKorCardNum:
-                tmp = baseRealCardNum[baseKorCardNum.index(text[i])]
-                if i == end-1:
-                    result += tmp
+        tmp = ""
+        for i in range(cardList[1]-1, cardList[0]-1, -1):
+            if text[i] not in unitKorCardNum:
+                wordList.append(text[i]+tmp)
+                tmp = ""
             else:
-                result += tmp * unitRealCardNum[unitKorCardNum.index(text[i])]
-                tmp = 1
-        text = text.replace(chgWord, str(result))
+                if i != cardList[0] and text[i-1] in unitKorCardNum:
+                    wordList.append(text[i])
+                    continue
+                tmp = text[i]+tmp
+                if i == cardList[0]:
+                    wordList.append(tmp)
+    wordList.reverse()
+    
+    for word in wordList:
+        #여기서부터.. 이제 숫자로 진짜 변환
+    print(wordList)
     return text
 
 
