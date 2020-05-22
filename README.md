@@ -5,14 +5,14 @@ Change korean text num to
 * pypi: ```pip install knum```
 * source code:
   ```bash
-  git clone https://github.com/study-ai-data/knum.git
+  git clone https://github.com/study-ai-data/korNum.git
   cd knum
   python setup.py install
   ```
 ### Getting Started
 * pypi
   ```python
-  from knum.chgFormat import kor2num
+  from korNum.chgFormat import kor2num
   
   
   text = "맛있는 포카칩이 구천팔백칠십육억오천사백삼십이만천백십일원!"

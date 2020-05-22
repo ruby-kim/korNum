@@ -1,15 +1,15 @@
 from setuptools import setup, find_packages
-import knum
+import korNum
 
-setup(name=knum.__name__,
-      description=knum.__description__,
-      version=knum.__version__,
+setup(name=korNum.__name__,
+      description=korNum.__description__,
+      version=korNum.__version__,
       author=['Kyeongnam Kim'],
       author_email=['kkyy0126@naver.com'],
-      url=knum.__url__,
-      download_url=knum.__download_url__,
-      install_requires=knum.__install_requires__,
-      license=knum.__license__,
+      url=korNum.__url__,
+      download_url=korNum.__download_url__,
+      install_requires=korNum.__install_requires__,
+      license=korNum.__license__,
       long_description=open('./README.md', 'r', encoding='utf-8').read(),
       packages=find_packages(),
       classifiers=[

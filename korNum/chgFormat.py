@@ -1,4 +1,4 @@
-from knum import chgList
+from korNum import chgList
 
 
 def get_guessed_num_idx(text):
