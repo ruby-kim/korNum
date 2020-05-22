@@ -35,7 +35,7 @@ def get_guessed_num_idx(text):
 
     return cardIdx, ordIdx
 
-
+ 
 def judge_exist_num_text(text):
     """
     judge whether num text exists or not in text
