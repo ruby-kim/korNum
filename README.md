@@ -1,14 +1,16 @@
-# kor2num
-Change korean text num to 
-한글로 구성된 숫자를 아라비안 숫자로 바꿔주는 코드
+# korNum
+Change **[Korean number text -> Arabic number]** or<br>
+**[Arabic number -> Korean number text]**
+
 ### Installation
-* pypi: ```pip install knum```
+* pypi: ```pip install korNum```
 * source code:
   ```bash
   git clone https://github.com/study-ai-data/korNum.git
   cd knum
   python setup.py install
   ```
+
 ### Getting Started
 * pypi
   ```python
@@ -21,3 +23,6 @@ Change korean text num to
   ```
 * source code:
   ```python run.py```
+
+### Note
+You can see more information here: [Description.md](https://github.com/study-ai-data/korNum/blob/master/Description.md)
