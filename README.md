@@ -28,4 +28,4 @@ Change **[Korean number text -> Arabic number]** or<br>
 
 ### Note
 * only operate about cardinal number(기수: 일, 이, 삼, 사, ...)
-You can see more information here: [Description.md](https://github.com/study-ai-data/korNum/blob/master/Description.md)
+* You can see more information here: [Description.md](https://github.com/study-ai-data/korNum/blob/master/Description.md)
