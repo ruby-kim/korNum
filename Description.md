@@ -1,5 +1,12 @@
-# Document
-## Quick Start
+# Description
+## File Structure
+```
+파일 구조 작성
+```
+
+## ```./run.py```
+## ```knum/chgFormat.py```
+## ```knum/chgList.py```
 1. 판별 알고리즘: 단위 등장 시 바로 앞 단어의 상태를 보고 숫자인지 판별
    ```bash
    나에게는 구멍난 원이 있어.
