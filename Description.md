@@ -1,12 +1,25 @@
 # Description
 ## File Structure
 ```
-파일 구조 작성
+.
+├─ korNum
+│  ├─ __init__.py
+│  ├─ chgFormat.py
+│  └─ chgList.py
+├─ .gitignore
+├─ Description.md
+├─ LICENSE
+├─ README.md
+├─ run.py  
+└─ setup.py
 ```
 
 ## ```./run.py```
+test script: input your text in line 5
 ## ```knum/chgFormat.py```
+change format: the process of kor2num(only cardinal num), num2kor(Not Yet)
 ## ```knum/chgList.py```
+change list: [**cardinal** "text" & "real num"] list + [**ordinal** "text" & "real num"] list + [**unit** about cardinal & ordinal] list
 1. 판별 알고리즘: 단위 등장 시 바로 앞 단어의 상태를 보고 숫자인지 판별
    ```bash
    나에게는 구멍난 원이 있어.
