@@ -145,7 +145,6 @@ def cardFunction(text):
 
     # 1. find num text section
     cardLists = find_num_text_section(text, cardNum, cardIdx)
-    cardListsText = text_of_num_text_section(text, cardLists)
 
     # 2. separate kor and num to list
     korCardNum, realCardNum = list(), list()
@@ -185,8 +184,8 @@ def cardFunction(text):
     result = calc_element(wordList)
 
     # 7. change entire num text(word) to real num
-    for i in range(len(cardListsText)):
-        text = text.replace(cardListsText[i], str(result[i]))
+    for i in range(len(cardLists)):
+        text = text.replace(text[cardLists[i][0]:cardLists[i][1]], str(result[i]))
 
     return text
 
