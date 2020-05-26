@@ -79,13 +79,6 @@ def find_num_text_section(text, Num, Idx):
     return Lists
 
 
-def text_of_num_text_section(text, Lists):
-    numText = list()
-    for elem in Lists:
-        numText.append(text[elem[0]:elem[1]])
-    return numText
-
-
 def separate_each_num_text_to_list(text, Lists, unitKorNum):
     result = list()
     for cardList in Lists:
