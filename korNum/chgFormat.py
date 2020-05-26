@@ -79,6 +79,13 @@ def find_num_text_section(text, Num, Idx):
     return Lists
 
 
+def text_of_num_text_section(text, Lists):
+    numText = list()
+    for elem in Lists:
+        numText.append(text[elem[0]:elem[1]])
+    return numText
+
+
 def separate_each_num_text_to_list(text, Lists, unitKorNum):
     result = list()
     for cardList in Lists:
@@ -138,6 +145,7 @@ def cardFunction(text):
 
     # 1. find num text section
     cardLists = find_num_text_section(text, cardNum, cardIdx)
+    cardListsText = text_of_num_text_section(text, cardLists)
 
     # 2. separate kor and num to list
     korCardNum, realCardNum = list(), list()
@@ -176,9 +184,15 @@ def cardFunction(text):
     # 6. multiply & plus all of elements
     result = calc_element(wordList)
 
-    # 7. change entire num text(word) to real num
-    for i in range(len(cardLists)):
-        text = text.replace(text[cardLists[i][0]:cardLists[i][1]], str(result[i]))
+    # 7. grouping text<->num pair as dictionary & descending
+    pair_text_num = dict()
+    for i in range(len(result)):
+        pair_text_num[cardListsText[i]] = result[i]
+    pair_text_num = sorted(pair_text_num.items(), reverse=True, key=lambda item:item[1])
+
+    # 8. change entire num text(word) to real num
+    for key, value in pair_text_num:
+        text = text.replace(key, str(value))
 
     return text
 
