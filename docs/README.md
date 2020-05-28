@@ -1,4 +1,27 @@
 # Project Description
+## Installation
+* pypi: ```pip install korNum```
+* source code:
+  ```bash
+  git clone https://github.com/study-ai-data/korNum.git
+  cd korNum
+  python setup.py install
+  ```
+
+## Getting Started
+* pypi
+  ```python
+  >>> from korNum.chgFormat import kor2num
+  >>> text1 = "맛있는 포카칩이 구천팔백칠십육억오천사백삼십이만천백십일원!"
+  >>> print(kor2num(text1))
+  맛있는 포카칩이 987654321111원!
+  >>> text2 = "맛있는 포카칩이 구천팔백칠십육억오천사백삼십이만천백십일원에서 오백십만육십구원, 만사천칠백원을 거쳐 이제는 천오백원으로!"
+  >>> print(kor2num(text2))
+  맛있는 포카칩이 987654321111원에서 5100069원, 14700원을 거쳐 이제는 1500원으로!
+  ```
+* source code:
+  ```python run.py```
+
 ## File Structure
 ```
 .
@@ -38,6 +61,6 @@ File description except for docs files
   * 여기서 ```포```는 인삼이나 자루 등을 세는 단위 또는 포카칩이라는 명사의 일부분,<br>```개```는 물건을 세는 단위 또는 동물 등 다양한 의미를 가짐
   * ```포```앞의 ```늘```은 숫자를 세는 단위가 아님<br>```개```앞의 ```다섯```은 숫자를 세는 단위
   * 따라서 해당 문장에서는 숫자로 구성된 텍스트가 존재하고, 그 부분이 바로 다섯이라는 것을 알 수 있음
-  
+
 ### ```knum/chgList.py```
 * change list: [**cardinal** "text" & "real num"] list + [**ordinal** "text" & "real num"] list + [**unit** about cardinal & ordinal] list
